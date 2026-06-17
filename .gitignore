@@ -1,0 +1,16 @@
+# OpenClaw local state
+.openclaw/
+
+# Sensitive files (may contain API keys, tokens)
+MEMORY.md
+memory/
+TOOLS.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
