@@ -1,14 +1,27 @@
 # OpenClaw local state
 .openclaw/
 
-# Sensitive files (may contain API keys, tokens)
-MEMORY.md
-memory/
-TOOLS.md
+# TOOLS.md may contain local-only notes, sync it anyway for multi-device use
+# MEMORY.md and memory/ are essential for agent continuity across devices
+
+# Screenshots and design images (large, not for git)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+lanhu-shots/
+lanhu-detail/
+D:/
+
+# Python temp scripts
+*.py
+__pycache__/
 
 # OS files
 .DS_Store
 Thumbs.db
+*Zone.Identifier
 
 # Editor files
 *.swp
