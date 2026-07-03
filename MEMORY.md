@@ -56,7 +56,7 @@
   - interview-advanced-topics.md
 - 2026-07-01：面试题补充（catch/cache 区别）
 - 2026-07-02：调研小程序唤起高德 app 方案
-- 2026-07-03：ccs_web 大幅开发 + 安全加固
+- 2026-07-03：ccs_web 大幅开发 + 安全加固 + 云服务器部署
   - **用户系统**：B站 UID 注册绑定，调用 api.bilibili.com/x/web-interface/card 查询用户信息
   - **大富翁游戏**：棋盘格子逻辑重做（蛇形排列，每行15格）、骰子1-6随机、用户头像标记位置
   - **管理员权限**：管理员/主播不限制游戏次数
@@ -65,6 +65,10 @@
   - **头像上传**：注册时不强制，个人信息页更换
   - **次数用尽弹窗**：主题色可爱弹窗「给鲨鲨刷点就有次数咯」
   - **安全加固**：Token 无感刷新（access 2h + refresh 7d）、请求签名验证（防篡改+防重放）
+  - **你画我猜**：词语生成模块，主播/管理员一键随机生成，弹窗式交互
+  - **初始账号**：admin(yls000806/管理员)、ccs(yls208677/主播)
+  - **GitHub 仓库**：https://github.com/zhangmeng8687/ccs_web.git
+  - **云服务器部署**：阿里云轻量 120.26.222.248，宝塔面板
   - 后端：utils/token.js, middleware/signature.js
   - 前端：utils/request.js, utils/signature.js, stores/user.js
 
@@ -80,12 +84,15 @@
   - 29个 API，已接入 18个（含 service 层）
 
 - **ccs_web 主播粉丝互动平台**：
-  - 路径：E:\projects\ccs_web
+  - 本地路径：E:\projects\ccs_web
+  - GitHub：https://github.com/zhangmeng8687/ccs_web.git
   - 技术栈：Vue3 + Element Plus + Express + MySQL
-  - 功能：用户注册登录（B站UID绑定）、大富翁游戏、话题讨论、轮播图、管理后台
-  - 安全机制：JWT双token（2h+7d）、请求签名验证
-  - 数据库：ccs_web，密码 yls000806
-  - 端口：3000
+  - 功能：用户注册登录（B站UID绑定）、大富翁游戏、幸运转盘、话题讨论、你画我猜词语生成、管理后台
+  - 安全机制：JWT双token（2h+7d）、请求签名验证（等HTTPS再开）
+  - 数据库：ccs_web
+  - 端口：5000（云服务器）/ 3000（本地）
+  - 初始账号：admin(yls000806/管理员)、ccs(yls208677/主播)
+  - 云服务器：阿里云轻量 120.26.222.248（宝塔面板）
 
 - **前端面试题**：
   - 文件位置：C:\Users\Administrator\.openclaw\workspace\
@@ -124,9 +131,11 @@
 - [ ] 启炼AI 页面细节完善
 - [ ] 设计规范统一（design-comparison.md 中记录了不一致问题）
 - [ ] 飞书表格 187 条空行清理
-- [ ] ccs_web 签名验证测试（当前关闭，SIGNATURE_ENABLED=false）
 - [ ] ccs_web 大富翁：多人头像显示（最多4个/位置，超出显示气泡）、主播/管理员全局视角
 - [ ] ccs_web 每次回主页调用 API 更新 B站用户名
+- [ ] 云服务器部署完成后测试所有功能
+- [ ] 删除暴露的 GitHub token
+- [ ] 本地积压代码 push（网络恢复后）
 
 ---
-_最后更新：2026-07-03 12:31_
+_最后更新：2026-07-04 01:24_
