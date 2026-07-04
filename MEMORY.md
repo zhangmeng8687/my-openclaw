@@ -65,10 +65,12 @@
   - **头像上传**：注册时不强制，个人信息页更换
   - **次数用尽弹窗**：主题色可爱弹窗「给鲨鲨刷点就有次数咯」
   - **安全加固**：Token 无感刷新（access 2h + refresh 7d）、请求签名验证（防篡改+防重放）
-  - **你画我猜**：词语生成模块，主播/管理员一键随机生成，弹窗式交互
+  - **你画我猜词语生成**：433个词语，15个分类，每个词语3个提示词
   - **初始账号**：admin(yls000806/管理员)、ccs(yls208677/主播)
   - **GitHub 仓库**：https://github.com/zhangmeng8687/ccs_web.git
   - **云服务器部署**：阿里云轻量 120.26.222.248，宝塔面板
+  - SSH：root / yls000806.（注意有点号）
+  - 宝塔面板账号：62bbf148 / 密码：938950ae8dc7
   - 后端：utils/token.js, middleware/signature.js
   - 前端：utils/request.js, utils/signature.js, stores/user.js
 
