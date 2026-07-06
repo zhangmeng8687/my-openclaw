@@ -163,6 +163,16 @@
     - API Key: sk-ck9…79s0（platform.xiaomimimo.com 申请）
     - ⚠️ 不支持 Token Plan，按量付费，3× 普通版价格换 10× 速度
 
+- **gold-stone-care 金石康养小程序**（2026-07-06 初始化）：
+  - **员工端** gold-stone-care-employee：登录、机构选择、餐饮订单、抢单大厅、送餐跟踪、直播推流
+  - **家属端** gold-stone-care-family：登录、绑定老人、餐饮浏览/下单/评价、健康查询、商品管理
+  - Gitee 仓库：https://gitee.com/jungang/gold-stone-care-employee.git / gold-stone-care-family.git
+  - 技术栈：微信小程序原生
+  - 设计规范：老年友好（最小20rpx字号、88rpx按钮、高对比度）
+  - 基础架构：request.js（Token拦截+401刷新）、storage.js、util.js、config.js
+  - 需求文档：E:\projects\二期需求_副本.xlsx
+  - 待完善：页面业务逻辑、组件样式、API对接
+
 ## 待办
 - [ ] 启炼AI 页面细节完善
 - [ ] 设计规范统一（design-comparison.md 中记录了不一致问题）
