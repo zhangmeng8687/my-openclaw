@@ -149,6 +149,9 @@
 ## 重要约定
 - 鲨鲨 🦈 是我的名字，每次回复前加「🦈鲨鲨收到！」
 - 张总在家和公司各部署了一套 OpenClaw，通过 GitHub 同步 workspace
+- 每日工作汇报模板：E:\projects\工作总结_YYYYMMDD.xlsx，参照 E:\projects\工作内容描述参照.png 的格式
+- 工作汇报列：人员/日期/今日计划/完成情况(具体工作)/投入工时/问题(反馈)/下周计划
+- 工作汇报「完成情况」不要写详细的颜色编码等技术细节，简洁描述即可
 - Windows Chrome 远程调试：`--remote-debugging-port=9222 --user-data-dir=/tmp/chrome-debug-profile`
 - WSL2 访问 Windows Chrome 需要通过 cmd.exe 中转（localhost 不通）
 
