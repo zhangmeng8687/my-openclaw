@@ -166,7 +166,7 @@
 - **金石康养小程序**（2026-07-06 初始化）：
   - 项目目录：D:\projects\gold-stone-care-employee / gold-stone-care-family（后续简称 employee / family）
   - img 文件夹：项目设计图（目前均为 employee 设计图）
-  - **员工端 employee**：登录、机构选择、餐饮订单、抢单大厅、送餐跟踪、直播推流
+  - **员工端 employee**：登录、机构选择、餐饮订单、抢单大厅、送餐跟踪
   - **家属端 family**：登录、绑定老人、餐饮浏览/下单/评价、健康查询、商品管理
   - Gitee 仓库：https://gitee.com/jungang/gold-stone-care-employee.git / gold-stone-care-family.git
   - 技术栈：微信小程序原生
@@ -174,7 +174,19 @@
   - 基础架构：request.js（Token拦截+401刷新）、storage.js、util.js、config.js
   - 需求文档：E:\projects\二期需求_副本.xlsx
   - **公共登录流程已完成**，当前专注 employee 项目，family 暂不推进
-  - 待完善：页面业务逻辑、组件样式、API对接
+  - **已完成功能（2026-07-09）**：
+    - 餐饮页：机构信息头部、外送/堂食Tab切换、统计卡片（background.png）、订单卡片、回顶按钮
+    - 全部订单页：时间筛选（今天/近三天/近七天）、订单类型筛选、搜索、批量接单
+    - 我的页面：机构信息、切换机构弹窗、退出登录
+    - 登录流程：login → login-phone → org-select → orders，自定义导航栏防止返回
+    - Tab栏：餐饮 + 我的（已移除直播）
+  - 待完善：页面业务逻辑、API对接、更多页面开发
+
+- **前端开发经验记录**：
+  - WXSS 不能引用本地图片路径，需用 `<image>` 标签或 base64
+  - SVG 从 Figma 导出的填充色可能过浅（如 #FFF9F0），在浅色背景上不可见，需用 CSS filter 处理
+  - wx.reLaunch 清空页面栈后仍显示首页按钮，需用自定义导航栏（navigationStyle: custom）彻底隐藏
+  - 小程序 scroll-view 需要固定高度才能内部滚动，改用页面级滚动更简单（onPageScroll + wx.pageScrollTo）
 
 ## 待办
 - [ ] 启炼AI 页面细节完善
@@ -185,6 +197,8 @@
 - [ ] 删除暴露的 GitHub token
 - [ ] 本地积压代码 push（网络恢复后）
 - [ ] ccs_web 移动端样式继续优化
+- [ ] 金石康养：页面业务逻辑、API对接、更多页面开发
+- [ ] 金石康养：回顶按钮功能验证（开发者工具中测试）
 
 ---
-_最后更新：2026-07-05 02:42_
+_最后更新：2026-07-09 17:32_
