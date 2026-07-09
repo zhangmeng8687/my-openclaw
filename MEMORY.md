@@ -108,6 +108,25 @@
     - 前端文件已上传（41个文件）
     - PM2 已重启
 
+- 2026-07-07：金石康养小程序开发
+  - 修复两个项目编译错误（requiredPrivateInfos、tabBar图标）
+  - PRD文档分析（智慧养老终端机），发现需求编号重复、支付流程缺失等问题
+  - 直播技术调研：live-pusher/live-player + 网易云信NERTC
+  - 登录流程重构：拆分入口页+手机号登录页，新增图形验证码
+  - 主题色从蓝色系改为设计稿橙色系
+  - Git分支：20260707-login、uat（从master合并login）
+  - 每日工作汇报模板：E:\projects\工作总结_YYYYMMDD.xlsx
+- 2026-07-08：金石康养小程序 - 订单页面开发
+  - 登录页样式对齐设计稿（渐变标题、640rpx按钮、胶囊输入框）
+  - 订单页严格对齐设计稿（机构信息/统计卡片/Tab栏/订单卡片）
+  - 所有订单列表页新建（Tab筛选/二级筛选/订单列表）
+  - 主色统一 #F89F3D，全项目替换
+  - 删除非必要页面（index/order-grab/org-select）
+  - TabBar 改为3项（餐饮/直播/我的），生成图标
+  - 所有页面去掉接口调用，纯本地逻辑
+  - Git分支：login（登录）、20260708-order（订单），均已合并到 uat
+  - 详细记录：memory/2026-07-08.md
+
 ## 项目
 - **启炼AI 微信小程序**：健身教练/会员管理工具
   - 技术栈：微信小程序原生（WXML/WXSS/JS）
@@ -129,6 +148,22 @@
   - 端口：5000（云服务器）/ 3000（本地）
   - 初始账号：admin(yls000806/管理员)、ccs(yls208677/主播)
   - 云服务器：阿里云轻量 120.26.222.248（宝塔面板）
+
+- **gold-stone-care 金石康养小程序**（2026-07-06 初始化）：
+  - **员工端** gold-stone-care-employee：
+    - 已完成：登录页、手机号登录页、餐饮订单页、所有订单列表页
+    - TabBar：餐饮/直播/我的（3项）
+    - 删除：index、order-grab、org-select
+    - 占位：直播、我的（空页面）
+    - 主色：#F89F3D，设计稿严格对齐
+    - 所有页面纯本地逻辑，无接口调用
+  - **家属端** gold-stone-care-family：登录页、手机号登录页已对齐设计稿
+  - Gitee 仓库：https://gitee.com/jungang/gold-stone-care-employee.git / gold-stone-care-family.git
+  - 技术栈：微信小程序原生
+  - Git 分支：login（登录）、20260708-order（订单），均已合并到 uat
+  - 需求文档：E:\projects\二期需求_副本.xlsx
+  - 设计稿：E:\projects\gold-stone-care\*.png（11张）
+  - 待完善：直播/我的页面、接口对接、假数据替换
 
 - **前端面试题**：
   - 文件位置：C:\Users\Administrator\.openclaw\workspace\
@@ -175,6 +210,7 @@
   - 基础架构：request.js（Token拦截+401刷新）、storage.js、util.js、config.js
   - 需求文档：E:\projects\二期需求_副本.xlsx
   - 待完善：页面业务逻辑、组件样式、API对接
+  - 详细记录：memory/2026-07-07.md
 
 ## 待办
 - [ ] 启炼AI 页面细节完善
