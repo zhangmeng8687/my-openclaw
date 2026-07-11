@@ -202,15 +202,22 @@
     - ⚠️ 不支持 Token Plan，按量付费，3× 普通版价格换 10× 速度
 
 - **gold-stone-care 金石康养小程序**（2026-07-06 初始化）：
-  - **员工端** gold-stone-care-employee：登录、机构选择、餐饮订单、抢单大厅、送餐跟踪、直播推流
+  - **员工端** gold-stone-care-employee：
+    - TabBar：餐饮/我的（2项，已移除直播）
+    - 已完成：登录页、手机号登录页、餐饮订单页、所有订单列表页、我的页面
+    - 订单页重构：12条数据覆盖三种状态，SVG图标替换emoji，统计卡片改用背景图，筛选联动
+    - 我的页面：机构logo/名称、切换机构（底部弹窗11个模拟机构）、退出登录
+    - 登录优化：自定义导航栏、login-logo.svg、失败弹窗提示改为「没有查询到绑定信息」
+    - 主色：#F89F3D，圆角统一32rpx，背景色#F5F5F5
+    - Git 分支：20260709-my 已合并到 uat（5个提交，48文件变更）
   - **家属端** gold-stone-care-family：登录、绑定老人、餐饮浏览/下单/评价、健康查询、商品管理
   - Gitee 仓库：https://gitee.com/jungang/gold-stone-care-employee.git / gold-stone-care-family.git
   - 技术栈：微信小程序原生
   - 设计规范：老年友好（最小20rpx字号、88rpx按钮、高对比度）
   - 基础架构：request.js（Token拦截+401刷新）、storage.js、util.js、config.js
   - 需求文档：E:\projects\二期需求_副本.xlsx
-  - 待完善：页面业务逻辑、组件样式、API对接
-  - 详细记录：memory/2026-07-07.md
+  - 待完善：家属端页面、API对接
+  - 详细记录：memory/2026-07-07.md、memory/2026-07-09.md
 
 ## 待办
 - [ ] 启炼AI 页面细节完善
@@ -223,4 +230,4 @@
 - [ ] ccs_web 移动端样式继续优化
 
 ---
-_最后更新：2026-07-05 02:42_
+_最后更新：2026-07-11 20:41_
