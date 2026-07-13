@@ -199,8 +199,10 @@
   - **家属端** gold-stone-care-family：
     - 2026-07-10 项目重建，复用员工端登录流程
     - 已完成：首页（用户信息+关爱老人卡片+功能入口）、登录页、手机号登录页
-    - 2026-07-13 新增：餐饮服务页（restaurant）、所有订单页（all-orders）、评价弹窗组件（review-modal）
-    - 已建页面：restaurant、all-orders、health、orders、profile（后三者待填充业务逻辑）
+    - 2026-07-13 新增：餐饮服务页（restaurant）、所有订单页（all-orders）、评价弹窗组件（review-modal）、餐品搜索页（food-search）、订单搜索页（order-search）
+    - 已建页面：restaurant、food-search、order-search、all-orders、health、orders、profile（后三者待填充业务逻辑）
+    - 设计稿图标：从 D:\projects\gold-stone-care-img\family\family-icon\ 复制到 images/
+    - 已用图标：repast.png、health.png、information.png、icon_search-circle.svg、icon_unfold.svg
     - 无 tabBar，自定义导航栏
     - 设计图 27 张已分析（D:\projects\gold-stone-care-img\family\）
     - 设计稿路径：D:\projects\gold-stone-care-img\family\
