@@ -199,11 +199,14 @@
   - **家属端** gold-stone-care-family：
     - 2026-07-10 项目重建，复用员工端登录流程
     - 已完成：首页（用户信息+关爱老人卡片+功能入口）、登录页、手机号登录页
-    - 已建页面：health、orders、profile（待填充业务逻辑）
+    - 2026-07-13 新增：餐饮服务页（restaurant）、所有订单页（all-orders）、评价弹窗组件（review-modal）
+    - 已建页面：restaurant、all-orders、health、orders、profile（后三者待填充业务逻辑）
     - 无 tabBar，自定义导航栏
     - 设计图 27 张已分析（D:\projects\gold-stone-care-img\family\）
     - 设计稿路径：D:\projects\gold-stone-care-img\family\
-    - 待完善：各页面业务逻辑、API对接
+    - Git 分支：20260713-restaurant（餐饮服务开发）
+    - 蓝湖设计稿无标注数据，通过设计图分析估算尺寸
+    - 待完善：各页面业务逻辑、API对接、样式微调
   - Gitee 仓库：https://gitee.com/jungang/gold-stone-care-employee.git / gold-stone-care-family.git
   - 技术栈：微信小程序原生
   - 设计规范：老年友好（最小20rpx字号、88rpx按钮、高对比度）
@@ -220,6 +223,9 @@
 - [ ] 删除暴露的 GitHub token
 - [ ] 本地积压代码 push（网络恢复后）
 - [ ] ccs_web 移动端样式继续优化
+- [ ] 金石康养家属端：餐饮服务页样式微调、业务逻辑开发、API对接
+- [ ] 金石康养家属端：所有订单页业务逻辑开发
+- [ ] 金石康养家属端：评价弹窗组件功能完善
 
 ---
-_最后更新：2026-07-13 09:45_
+_最后更新：2026-07-13 13:47_
