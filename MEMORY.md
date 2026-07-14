@@ -126,6 +126,17 @@
   - 所有页面去掉接口调用，纯本地逻辑
   - Git分支：login（登录）、20260708-order（订单），均已合并到 uat
   - 详细记录：memory/2026-07-08.md
+- 2026-07-14：金石康养小程序 - 家属端大幅开发
+  - 餐品详情页（food-detail）：单张大图、渐变导航栏、吸顶Tab、购物车弹窗
+  - 确认订单页（order-confirm）：表单、用餐时间/形式选择、提交订单弹窗
+  - 个人信息页（profile）：头像、用户名、绑定老人、退出登录
+  - 老人管理页（elderly-manage）：亲属列表、切换老人、绑定/解绑
+  - 绑定确认页（bind-confirm）：扫码后确认、申请表单、关系选择
+  - 健康管理页（health-manage）：睡眠监测、生命体征、异常警报
+  - 信息录入页（health-record）：就诊记录Tab、记录列表
+  - 员工端登录改为微信一键登录
+  - 分支 20260714-orderDetail 已合并到 uat
+  - 详细记录：memory/2026-07-14.md
 
 ## 项目
 - **启炼AI 微信小程序**：健身教练/会员管理工具
@@ -198,17 +209,21 @@
     - Git 分支：20260709-my 已合并到 uat（5个提交，48文件变更）
   - **家属端** gold-stone-care-family：
     - 2026-07-10 项目重建，复用员工端登录流程
-    - 已完成：首页（用户信息+关爱老人卡片+功能入口）、登录页、手机号登录页
-    - 2026-07-13 新增：餐饮服务页（restaurant）、所有订单页（all-orders）、评价弹窗组件（review-modal）、餐品搜索页（food-search）、订单搜索页（order-search）
-    - 已建页面：restaurant、food-search、order-search、all-orders、health、orders、profile（后三者待填充业务逻辑）
-    - 设计稿图标：从 D:\projects\gold-stone-care-img\family\family-icon\ 复制到 images/
-    - 已用图标：repast.png、health.png、information.png、icon_search-circle.svg、icon_unfold.svg
-    - 无 tabBar，自定义导航栏
-    - 设计图 27 张已分析（D:\projects\gold-stone-care-img\family\）
+    - 已完成页面：
+      - 首页（index）：用户信息+关爱老人卡片+功能入口
+      - 登录页（login）、手机号登录页（login-phone）
+      - 餐饮服务页（restaurant）：餐品列表、筛选
+      - 餐品详情页（food-detail）：大图、信息卡片、购物车、评价
+      - 确认订单页（order-confirm）：表单、提交订单弹窗
+      - 所有订单页（all-orders）、订单搜索页（order-search）
+      - 个人信息页（profile）：头像、用户名、退出登录
+      - 老人管理页（elderly-manage）：亲属列表、切换老人、绑定/解绑
+      - 绑定确认页（bind-confirm）：扫码确认、申请表单
+      - 健康管理页（health-manage）：睡眠、生命体征、警报
+      - 信息录入页（health-record）：就诊记录Tab、记录列表
     - 设计稿路径：D:\projects\gold-stone-care-img\family\
-    - Git 分支：20260713-restaurant（餐饮服务开发）
-    - 蓝湖设计稿无标注数据，通过设计图分析估算尺寸
-    - 待完善：各页面业务逻辑、API对接、样式微调
+    - Git 分支：uat（已合并 20260713-restaurant、20260714-orderDetail）
+    - 待完善：各页面业务逻辑、API对接、图表组件接入
   - Gitee 仓库：https://gitee.com/jungang/gold-stone-care-employee.git / gold-stone-care-family.git
   - 技术栈：微信小程序原生
   - 设计规范：老年友好（最小20rpx字号、88rpx按钮、高对比度）
@@ -225,9 +240,10 @@
 - [ ] 删除暴露的 GitHub token
 - [ ] 本地积压代码 push（网络恢复后）
 - [ ] ccs_web 移动端样式继续优化
-- [ ] 金石康养家属端：餐饮服务页样式微调、业务逻辑开发、API对接
-- [ ] 金石康养家属端：所有订单页业务逻辑开发
-- [ ] 金石康养家属端：评价弹窗组件功能完善
+- [ ] 金石康养家属端：各页面业务逻辑对接真实接口
+- [ ] 金石康养家属端：健康管理页图表组件接入
+- [ ] 金石康养家属端：信息录入页添加记录功能
+- [ ] 金石康养家属端：扫码绑定流程完善
 
 ---
-_最后更新：2026-07-13 13:47_
+_最后更新：2026-07-14 16:18_
