@@ -137,6 +137,36 @@
   - 员工端登录改为微信一键登录
   - 分支 20260714-orderDetail 已合并到 uat
   - 详细记录：memory/2026-07-14.md
+- 2026-07-20：员工端接口调试 + 家属端UI优化
+  - **员工端**：
+    - saveLoginData 适配扁平响应结构（name/avatar/userId）
+    - 微信一键登录放开（移除调试return）
+    - 送达按钮按状态调不同接口：待接单→batchAccept，已接单→batchDeliver，配送中→batchFinish
+    - 首页 loadOrders 传 diningMethod 参数，我的接单不传（查全部类型）
+    - 堂食单地址显示 supplierName，详情页经纬度用 deliveryLat/deliveryLng
+    - 时间格式 YYYY年MM月DD日 HH:mm:ss，取消按钮除已完成/已取消外均显示
+    - 堂食单只展示不操作（无多选、无操作按钮）
+    - 返回顶部阈值 1000px，堂食筛选文案已下单→待接单
+    - 分支 20260720-API，全部合并 uat 并 push
+  - **家属端**：
+    - 确认订单页：地址label、按钮600×88居中、字号调整、餐品卡片布局优化
+    - UI全面对比整理问题清单，暂不对接接口
+  - 详细记录：memory/2026-07-20.md
+
+- 2026-07-17：金石云伴员工端全面对接API
+  - 项目重命名：金石康养 → 金石云伴
+  - 全页面接口对接：orders/all-orders/order-detail/order-search/delivery/profile
+  - 登录后自动加载机构列表，默认选中第一个，切换后持久化
+  - 获取验证码不检查协议，登录时才检查
+  - 全文件详细中文注释 + 删除设计稿注释
+  - 接口请求日志打印（请求/响应/异常捕获）
+  - 批量修复BOM问题（PowerShell Set-Content -Encoding UTF8 会加BOM）
+  - BOM字符（U+FEFF）在WXML中造成布局间距（发现于orders页）
+  - status=0 显示「待接单」而非接口返回的「已下单」
+  - formatOrder对齐真实API字段：diningMethod/firstDishName/orderTime时间戳
+  - 去除堂食/外卖前端筛选，等后端接口支持
+  - 分支：20260717-request
+  - 详细记录：memory/2026-07-17.md
 
 ## 项目
 - **启炼AI 微信小程序**：健身教练/会员管理工具
@@ -198,38 +228,24 @@
     - API Key: sk-ck9…79s0（platform.xiaomimimo.com 申请）
     - ⚠️ 不支持 Token Plan，按量付费，3× 普通版价格换 10× 速度
 
-- **gold-stone-care 金石康养小程序**（2026-07-06 初始化）：
+- **gold-stone-care 金石云伴小程序**（2026-07-06 初始化，原名金石康养）：
   - **员工端** gold-stone-care-employee：
-    - TabBar：餐饮/我的（2项，已移除直播）
-    - 已完成：登录页、手机号登录页、餐饮订单页、所有订单列表页、我的页面
-    - 订单页重构：12条数据覆盖三种状态，SVG图标替换emoji，统计卡片改用背景图，筛选联动
-    - 我的页面：机构logo/名称、切换机构（底部弹窗11个模拟机构）、退出登录
-    - 登录优化：自定义导航栏、login-logo.svg、失败弹窗提示改为「没有查询到绑定信息」
-    - 主色：#F89F3D，圆角统一32rpx，背景色#F5F5F5
-    - Git 分支：20260709-my 已合并到 uat（5个提交，48文件变更）
+    - TabBar：餐饮/我的（2项）
+    - 主色：#F89F3D，圆角统一32rpx
+    - Git 分支：20260717-request（当前开发分支）
+    - 已对接接口：登录/机构列表/订单列表统计详情/批量操作
+    - API配置：http://js-test.zjmiit.com（需hosts：10.128.80.116）
+    - 认证头：X-Access-Token
+    - 接口文档：D:\projects\小程序接口文档v1.docx
+    - 特殊处理：status=0显示「待接单」、用户信息用登录缓存、机构切换本地更新
   - **家属端** gold-stone-care-family：
-    - 2026-07-10 项目重建，复用员工端登录流程
-    - 已完成页面：
-      - 首页（index）：用户信息+关爱老人卡片+功能入口
-      - 登录页（login）、手机号登录页（login-phone）
-      - 餐饮服务页（restaurant）：餐品列表、筛选
-      - 餐品详情页（food-detail）：大图、信息卡片、购物车、评价
-      - 确认订单页（order-confirm）：表单、提交订单弹窗
-      - 所有订单页（all-orders）、订单搜索页（order-search）
-      - 个人信息页（profile）：头像、用户名、退出登录
-      - 老人管理页（elderly-manage）：亲属列表、切换老人、绑定/解绑
-      - 绑定确认页（bind-confirm）：扫码确认、申请表单
-      - 健康管理页（health-manage）：睡眠、生命体征、警报
-      - 信息录入页（health-record）：就诊记录Tab、记录列表
-    - 设计稿路径：D:\projects\gold-stone-care-img\family\
-    - Git 分支：uat（已合并 20260713-restaurant、20260714-orderDetail）
+    - Git 分支：20260716-UI
+    - 已完成页面：首页/登录/餐饮/餐品详情/确认订单/所有订单/订单搜索/个人信息/老人管理/绑定确认/健康管理/信息录入
     - 待完善：各页面业务逻辑、API对接、图表组件接入
   - Gitee 仓库：https://gitee.com/jungang/gold-stone-care-employee.git / gold-stone-care-family.git
   - 技术栈：微信小程序原生
   - 设计规范：老年友好（最小20rpx字号、88rpx按钮、高对比度）
-  - 基础架构：request.js（Token拦截+401刷新）、storage.js、util.js、config.js
-  - 需求文档：E:\projects\二期需求_副本.xlsx
-  - 详细记录：memory/2026-07-07.md、memory/2026-07-09.md、memory/2026-07-10.md
+  - 详细记录：memory/2026-07-17.md
 
 ## 待办
 - [ ] 启炼AI 页面细节完善
@@ -240,10 +256,11 @@
 - [ ] 删除暴露的 GitHub token
 - [ ] 本地积压代码 push（网络恢复后）
 - [ ] ccs_web 移动端样式继续优化
-- [ ] 金石康养家属端：各页面业务逻辑对接真实接口
-- [ ] 金石康养家属端：健康管理页图表组件接入
-- [ ] 金石康养家属端：信息录入页添加记录功能
-- [ ] 金石康养家属端：扫码绑定流程完善
+- [ ] 金石云伴员工端：堂食/外卖筛选等后端接口支持
+- [ ] 金石云伴家属端：各页面业务逻辑对接真实接口
+- [ ] 金石云伴家属端：健康管理页图表组件接入
+- [ ] 金石云伴家属端：信息录入页添加记录功能
+- [ ] 金石云伴家属端：扫码绑定流程完善
 
 ---
-_最后更新：2026-07-14 16:18_
+_最后更新：2026-07-20 17:30_
