@@ -153,6 +153,25 @@
     - UI全面对比整理问题清单，暂不对接接口
   - 详细记录：memory/2026-07-20.md
 
+- 2026-07-21：家属端全面对接API + 员工端优化
+  - **员工端**：
+    - order-card 事件名 tap→cardtap（修复PC端无法获取订单id）
+    - /ema/login phoneCode 改为必填
+    - 首页外送单tab只显示待接单(status=0)，隐藏状态标签
+    - 我的接单tab传 diningMethod=takeout + status=1 + acceptorId=userId
+    - order-search 页补充下拉刷新
+  - **家属端**：
+    - 登录对接真实API（services/auth.js，ma模块）
+    - 创建7个service文件：bind/dish/order/review/sleep/health/health-manage
+    - 12个页面从mock改为真实API调用
+    - 关键发现：ma模块和ema模块完全不同（前缀/认证头/响应字段/参数名）
+    - 接口参数修正：phoneLogin用phone(非mobile)、phoneCode必填、cancelOrder的reason走query
+    - 域名修正：js-test.zjmiit.com/wz（与员工端一致）
+    - 8个列表页添加下拉刷新
+    - 删除旧services/elderly.js，清理非项目文件
+    - Git分支：20260721-API
+  - 详细记录：memory/2026-07-21.md
+
 - 2026-07-17：金石云伴员工端全面对接API
   - 项目重命名：金石康养 → 金石云伴
   - 全页面接口对接：orders/all-orders/order-detail/order-search/delivery/profile
@@ -232,20 +251,27 @@
   - **员工端** gold-stone-care-employee：
     - TabBar：餐饮/我的（2项）
     - 主色：#F89F3D，圆角统一32rpx
-    - Git 分支：20260717-request（当前开发分支）
+    - Git 分支：uat（主线）
     - 已对接接口：登录/机构列表/订单列表统计详情/批量操作
-    - API配置：http://js-test.zjmiit.com（需hosts：10.128.80.116）
+    - API配置：http://js-test.zjmiit.com/wz（需hosts：10.128.80.116）
     - 认证头：X-Access-Token
     - 接口文档：D:\projects\小程序接口文档v1.docx
     - 特殊处理：status=0显示「待接单」、用户信息用登录缓存、机构切换本地更新
+    - 首页外送单只显示待接单，我的接单传acceptorId
   - **家属端** gold-stone-care-family：
-    - Git 分支：20260716-UI
+    - Git 分支：20260721-API
+    - 已对接接口：登录(ma)/绑定/菜单/订单/评价/睡眠/健康档案/健康CRUD
+    - 认证头：X-MiniApp-Token
+    - API域名：http://js-test.zjmiit.com/wz
     - 已完成页面：首页/登录/餐饮/餐品详情/确认订单/所有订单/订单搜索/个人信息/老人管理/绑定确认/健康管理/信息录入
-    - 待完善：各页面业务逻辑、API对接、图表组件接入
+    - 所有列表页已加下拉刷新
+    - 待完善：visit-edit表单提交、profile-edit个人信息编辑、order-confirm用户地址信息
   - Gitee 仓库：https://gitee.com/jungang/gold-stone-care-employee.git / gold-stone-care-family.git
   - 技术栈：微信小程序原生
   - 设计规范：老年友好（最小20rpx字号、88rpx按钮、高对比度）
-  - 详细记录：memory/2026-07-17.md
+  - ⚠️ ma和ema是完全不同的模块（前缀/认证头/响应字段/参数名）
+  - ⚠️ /ma/login 要求 loginCode + phoneCode 均必填，无法静默刷新token
+  - 详细记录：memory/2026-07-17.md、memory/2026-07-21.md
 
 ## 待办
 - [ ] 启炼AI 页面细节完善
@@ -256,11 +282,10 @@
 - [ ] 删除暴露的 GitHub token
 - [ ] 本地积压代码 push（网络恢复后）
 - [ ] ccs_web 移动端样式继续优化
-- [ ] 金石云伴员工端：堂食/外卖筛选等后端接口支持
-- [ ] 金石云伴家属端：各页面业务逻辑对接真实接口
-- [ ] 金石云伴家属端：健康管理页图表组件接入
-- [ ] 金石云伴家属端：信息录入页添加记录功能
+- [ ] 金石云伴家属端：visit-edit 表单提交对接 save/update 接口
+- [ ] 金石云伴家属端：profile-edit 个人信息编辑（确认是否有对应接口）
+- [ ] 金石云伴家属端：order-confirm 用户地址信息从接口获取
 - [ ] 金石云伴家属端：扫码绑定流程完善
 
 ---
-_最后更新：2026-07-20 17:30_
+_最后更新：2026-07-21 16:30_
