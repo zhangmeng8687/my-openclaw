@@ -139,25 +139,34 @@
 - 待完成：大富翁多人头像、签名验证（等 HTTPS）
 
 ### 金石云伴员工端（gold-stone-care-employee）
-- TabBar：餐饮/直播/我的（3项）
+- TabBar：餐饮/我的（2项）
 - 主色：#F89F3D
-- Git 分支：uat 是最新状态
-- 已完成页面：登录、餐饮订单、所有订单、订单详情、订单搜索、送达、个人中心
+- Git 分支：uat 是最新状态（2026-07-24 已同步）
+- 本地路径：E:\projects\gold-stone-care-employee
+- Gitee：https://gitee.com/jungang/gold-stone-care-employee.git
+- 已完成页面（8个）：orders、all-orders、order-detail、order-search、delivery、login、login-phone、profile
+- 组件（4个）：confirm-dialog、loading、order-card、tab-bar
+- 服务（5个）：auth.js、live.js、order.js、supplier.js、user.js
+- 工具（5个）：config.js、request.js、safe-guard.js、storage.js、util.js
 - 已对接真实 API（X-Access-Token 认证）
 - API 域名：js-test.zjmiit.com/wz（需内网/VPN）
 - API 前缀：/ema
-- 设计稿路径：D:\projects\小程序接口文档v1.docx
+- 文件数：101
 
 ### 金石云伴家属端（gold-stone-care-family）
 - 无底部 TabBar
 - 主色：#F89F3D，字号 32rpx，内边距 18rpx
-- Git 分支：uat 是最新状态
-- 已完成页面：登录、首页、餐饮服务、餐品详情、确认订单、所有订单、订单详情、订单搜索、老人管理、绑定确认、健康管理、信息录入、就诊编辑、个人信息编辑
+- Git 分支：uat 是最新状态（2026-07-24 已同步，reset from 20260722-API）
+- 本地路径：E:\projects\gold-stone-care-family
+- Gitee：https://gitee.com/jungang/gold-stone-care-family.git
+- 已完成页面（21个）：login、login-phone、index、restaurant、food-detail、food-search、order-confirm、order-search、all-orders、orders、health、profile、elderly-manage、bind-confirm、health-manage、health-record、visit-edit、health-report-edit、profile-edit、order-detail、webview
+- 组件（5个）：ec-canvas、health-line-chart、health-sleep-stage-chart、review-modal、review-popup
+- 服务（8个）：auth.js、bind.js、dish.js、health-manage.js、health.js、order.js、review.js、sleep.js
 - 已对接真实 API（X-MiniApp-Token 认证）
 - API 域名：js-test.zjmiit.com/wz
 - API 前缀：/ma
-- 设计稿路径：D:\projects\小程序接口文档v1.docx
-- 设计图目录：D:\projects\gold-stone-care-img\family\
+- 文件数：200
+- ⚠️ stash 中有 20260722-API 本地修改暂存（39文件），需要时可 git stash pop
 
 ### OpenClaw 工作区
 - GitHub：https://github.com/zhangmeng8687/my-openclaw.git
