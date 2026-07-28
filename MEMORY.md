@@ -261,6 +261,47 @@
 - PowerShell 编码警告：处理中文文件必须用 Node.js 或 write/edit 工具
 - 错误处理统一：console.error/warn → console.log（员工端8文件+家属端10文件）
 
+## 2026-07-27 新增
+- 分支操作：两端推送所有未同步本地分支到 Gitee
+- 家属端 `20260727-DATA` 分支（基于 uat）：缓存键前缀修复、visit-edit 导航栏修复、用户名默认值修复
+- 家属端 visit-edit 页面对接 health-manage 服务 CRUD（就诊记录/病史/过敏）
+- 家属端 health-report-edit 对接 saveCheckup/deleteCheckup（文档描述有误，体检接口实为报告接口）
+- 家属端 restaurant/order-detail 正确解析 dishList 数组结构
+- 家属端订单详情重构为单卡片布局（参考员工端）
+- 家属端状态标签统一为 green/orange/grey 三色
+- 员工端 `20260727-BUG` 分支（基于 uat，6 文件更新）
+- 员工端退出登录优化：保留 current_org/org_list 缓存，只清 token/user_info
+- 员工端订单列表空状态：无数据显示 01.png，网络异常显示 02.png（orders/all-orders/order-search）
+- 员工端切换 Tab 空状态修复：刷新前先清空列表数据
+
+## 2026-07-24 新增
+- 项目同步日：两端切换到 uat 分支并拉取最新代码
+- 员工端 fast-forward 成功（60 文件，+3482/-1950 行），TabBar 从 3 项改为 2 项（去掉直播）
+- 家属端远端 uat 大幅重构（forced update），本地 uat reset 到 origin/uat
+- 家属端 `20260722-API` 的 39 文件修改已 stash 保存（名称：`本地修改暂存-20260724`）
+- GitHub workspace 同步完成
+
+## 2026-07-28 新增
+- 从 uat 创建 `20260728-BUG` 分支（两端）
+- MiMo Code 更新：`@mimo-ai/cli` 0.1.5 → 0.1.9，设置每天 10:00 自动更新（国内镜像源）
+- 家属端主包体积优化（88 文件，+588/-319 行）
+  - 健康相关页面/组件从主包迁移到 subpackageHealth 分包（health-manage/health-record/visit-edit/ec-canvas 等）
+  - 餐饮相关页面迁移到 subpackageDining 分包（restaurant/food-detail/food-search/order-confirm 等）
+  - app.json 分包配置更新
+  - 新增 package-size-optimization.md 文档
+- 家属端 visit-edit 页面重构
+  - 删除处方药确认弹窗（显示药品名称+用量卡片，深灰按钮）
+  - 删除就诊记录确认弹窗（同样式，无药品信息）
+  - 处方用药列表 UI 调整
+- 家属端默认头像资源修改（default-avatar.svg → default_avatar.png）
+- 家属端接口 toast 统一使用返回的 message 字段（request.js + 28 文件）
+- 家属端健康服务 health.js 新增接口调用
+- 家属端确认订单页 UI 调整、餐品详情页微调
+- 家属端分包页面路径修复（visit-edit/health-record 等）
+- 员工端登录失败兼容业务异常信息 & 空视图大小调整（7 文件）
+- 员工端统一接口错误提示，使用接口返回的 message 字段（7 文件）
+- 员工端合并 20260728-BUG 分支到 uat
+
 ## 待办事项
 - [ ] 启炼AI 页面细节完善
 - [ ] 设计稿对比文件 design-comparison.md 待补充
@@ -275,8 +316,10 @@
 - [ ] 金石云伴家属端 profile-edit 页面保存后更新 globalData
 - [ ] 金石云伴家属端 order-confirm 确认下单按钮尺寸调整
 - [ ] 金石云伴家属端对接剩余未完成接口
-- [ ] 金石云伴家属端 20260723-API 分支提交并合并（含健康报告编辑页）
-- [ ] 金石云伴员工端 20260723-BUG 分支 Bug 修复
+- [ ] 金石云伴家属端 visit-edit/profile-edit 对接真实 API ✅（visit-edit 已完成）
+- [ ] 金石云伴家属端 20260727-DATA 分支提交并合并
+- [ ] 金石云伴员工端 20260727-BUG 分支 Bug 修复
+- [ ] 金石云伴家属端 visit-edit 删除处方药/就诊记录弹窗提交到 20260728-BUG
 
 ---
-_最后更新：2026-07-23 17:30_
+_最后更新：2026-07-28 19:32_
