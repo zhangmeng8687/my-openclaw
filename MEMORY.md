@@ -302,6 +302,26 @@
 - 员工端统一接口错误提示，使用接口返回的 message 字段（7 文件）
 - 员工端合并 20260728-BUG 分支到 uat
 
+## 2026-07-29 新增
+
+### 家属端（gold-stone-care-family）
+- 分支 `20260729-FEATURE` 已合并至 uat（9 文件，+39/-106 行）
+- 退出登录接口对接：调用 POST /ma/logout，成功后才清本地状态
+- 协议链接修复：域名去掉多余的 /wz 前缀
+- 头像路径修复：default-avatar.svg → default_avatar.png
+- 健康报告删除接口调用错误修复
+- 首页优化：删除睡眠评级模块，修复老人信息换行
+- 订单弹窗样式优化
+- 当前状态：等待测试反馈缺陷
+
+### 员工端（gold-stone-care-employee）
+- uat 拉取最新 2 个提交（+46/-9 行）
+- 新增公共 WebView 页面（pages/webview/webview），用于加载用户协议和隐私政策
+- 登录页协议链接拆分：viewUserAgreement / viewPrivacyPolicy，跳转 webview 加载 HTML
+- config.js 新增 legalBaseUrl 字段（开发/测试/生产环境独立配置）
+- 协议 URL：staff-service-agreement.html / staff-privacy-policy.html
+- 当前状态：员工端基本完成，待最终测试
+
 ## 待办事项
 - [ ] 启炼AI 页面细节完善
 - [ ] 设计稿对比文件 design-comparison.md 待补充
@@ -322,4 +342,4 @@
 - [ ] 金石云伴家属端 visit-edit 删除处方药/就诊记录弹窗提交到 20260728-BUG
 
 ---
-_最后更新：2026-07-28 19:32_
+_最后更新：2026-07-29 17:45_
