@@ -183,7 +183,7 @@
 
 ### Git 配置
 - user.email：unicorn998687@163.com
-- workspace 远端是 master 分支
+- workspace 远端 main 和 master 都有，main 是主分支，本地是 master，pull 用 main，push 用 master
 
 ## 工具环境
 - Windows Chrome 远程调试端口：9222
