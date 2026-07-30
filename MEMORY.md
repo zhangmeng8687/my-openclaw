@@ -126,7 +126,7 @@
 - 健身类小程序，含体成分/体态评估/AI报告等功能
 - 29 个 API，已对接 18 个 service
 - API 文档：https://docs.apipost.net/docs/detail/604a08004c88000
-- 设计稿路径：E:\projects\gold-stone-care-img\family\
+- 设计稿路径：D:\projects\gold-stone-care-img\family\
 
 ### ccs_web - 主播互动管理平台
 - 技术栈：Vue3 + Element Plus + Express + MySQL
@@ -139,12 +139,12 @@
 - 待完成：大富翁多人头像、签名验证（等 HTTPS）
 
 ### 金石云伴员工端（gold-stone-care-employee）
-- TabBar：餐饮/我的（2项）
+- 本地路径：D:\projects\gold-stone-care-employee
+- TabBar：餐饮/直播/我的（3项）
 - 主色：#F89F3D
-- Git 分支：uat 是最新状态（2026-07-24 已同步）
-- 本地路径：E:\projects\gold-stone-care-employee
+- Git 分支：20260723-BUG（最新）
 - Gitee：https://gitee.com/jungang/gold-stone-care-employee.git
-- 已完成页面（8个）：orders、all-orders、order-detail、order-search、delivery、login、login-phone、profile
+- 已完成页面：登录、餐饮订单、所有订单、订单详情、订单搜索、送达、个人中心
 - 组件（4个）：confirm-dialog、loading、order-card、tab-bar
 - 服务（5个）：auth.js、live.js、order.js、supplier.js、user.js
 - 工具（5个）：config.js、request.js、safe-guard.js、storage.js、util.js
@@ -154,19 +154,18 @@
 - 文件数：101
 
 ### 金石云伴家属端（gold-stone-care-family）
+- 本地路径：D:\projects\gold-stone-care-family
 - 无底部 TabBar
 - 主色：#F89F3D，字号 32rpx，内边距 18rpx
-- Git 分支：uat 是最新状态（2026-07-24 已同步，reset from 20260722-API）
-- 本地路径：E:\projects\gold-stone-care-family
+- Git 分支：20260723-API（最新）
 - Gitee：https://gitee.com/jungang/gold-stone-care-family.git
-- 已完成页面（21个）：login、login-phone、index、restaurant、food-detail、food-search、order-confirm、order-search、all-orders、orders、health、profile、elderly-manage、bind-confirm、health-manage、health-record、visit-edit、health-report-edit、profile-edit、order-detail、webview
+- 已完成页面：登录、首页、餐饮服务、餐品详情、确认订单、所有订单、订单详情、订单搜索、老人管理、绑定确认、健康管理、信息录入、就诊编辑、个人信息编辑、健康报告编辑
 - 组件（5个）：ec-canvas、health-line-chart、health-sleep-stage-chart、review-modal、review-popup
 - 服务（8个）：auth.js、bind.js、dish.js、health-manage.js、health.js、order.js、review.js、sleep.js
 - 已对接真实 API（X-MiniApp-Token 认证）
 - API 域名：js-test.zjmiit.com/wz
 - API 前缀：/ma
 - 文件数：200
-- ⚠️ stash 中有 20260722-API 本地修改暂存（39文件），需要时可 git stash pop
 
 ### OpenClaw 工作区
 - GitHub：https://github.com/zhangmeng8687/my-openclaw.git
@@ -184,7 +183,7 @@
 
 ### Git 配置
 - user.email：unicorn998687@163.com
-- workspace 远端是 main 分支
+- workspace 远端是 master 分支
 
 ## 工具环境
 - Windows Chrome 远程调试端口：9222
@@ -221,6 +220,37 @@
 - position: sticky 在 flex 布局中可能失效，改用 position: fixed 或设置 height: 100vh + overflow: auto
 
 ## 2026-07-22 新增
+- 员工端 20260722-API 分支：错误处理统一、登录优化、订单功能完善、搜索页优化、首页优化
+  - request.js 统一处理网络异常，业务错误保持页面自定义提示
+  - 登录态检查优化、机构选择状态持久化
+  - 堂食单仅展示、批量接单/送达接口对接
+  - 搜索页下拉刷新、高度溢出修复
+  - 今日 80+ 次提交
+
+## 2026-07-23 新增
+- 家属端 `20260723-API` 分支：Canvas层级修复、首页数据完善、健康UI优化、录入信息重构、操作弹窗重做、健康报告编辑页开发
+  - Canvas 原生层 z-index 无效 → 渲染后转图片显示（_canvasToImage）
+  - 首页老人信息补充（社群/地址/性别字段统一）
+  - 健康管理页：异常卡片动画、标签拆分、就诊记录样式
+  - 录入信息页：顶部固定、卡片样式统一、报告卡片重设计
+  - 操作弹窗：自定义底部弹窗（编辑/下载/预览 + 删除 + 取消）
+  - 新建 health-report-edit 页面（就诊医院/报告日期/备注/附件上传）
+  - 列表页分页加载（all-orders/food-search/order-search）
+  - 错误处理优化：移除重复提示、Babel兼容修复
+- 员工端 `20260723-BUG` 分支：错误处理统一、登录优化、订单功能完善、搜索页优化、首页优化
+  - request.js 统一处理网络异常，业务错误保持页面自定义提示
+  - 登录态检查优化、机构选择状态持久化
+  - 堂食单仅展示、批量接单/送达接口对接
+  - 搜索页下拉刷新、高度溢出修复
+  - 今日 80+ 次提交
+- 项目路径从 E: 改为 D:（E 盘不可用）
+- 家属端 `20260723-API` 分支：健康报告编辑页开发（5.09/5.10/5.11 设计稿）
+- 员工端 `20260723-BUG` 分支：基于最新 uat
+- 健康报告编辑页 `health-report-edit` 新建（就诊医院/报告日期/备注/附件上传）
+- 文件操作弹窗从 wx.showActionSheet 改为自定义底部弹窗（编辑/下载/预览/删除）
+- project.config.json appid 恢复为远端原始值 wx40cbd1fb4bb0441e
+
+## 2026-07-22 新增
 - MEMORY.md 从 memory/*.md 完整重建（原文件因编码错误全损）
 - 家属端扫码绑定重构：JSON 格式二维码，bind-confirm 页面重设计
 - 家属端首页逻辑：未绑定老人时隐藏功能入口
@@ -230,6 +260,67 @@
 - 信息录入页：导航栏对齐（padding-top 加 44）
 - PowerShell 编码警告：处理中文文件必须用 Node.js 或 write/edit 工具
 - 错误处理统一：console.error/warn → console.log（员工端8文件+家属端10文件）
+
+## 2026-07-27 新增
+- 分支操作：两端推送所有未同步本地分支到 Gitee
+- 家属端 `20260727-DATA` 分支（基于 uat）：缓存键前缀修复、visit-edit 导航栏修复、用户名默认值修复
+- 家属端 visit-edit 页面对接 health-manage 服务 CRUD（就诊记录/病史/过敏）
+- 家属端 health-report-edit 对接 saveCheckup/deleteCheckup（文档描述有误，体检接口实为报告接口）
+- 家属端 restaurant/order-detail 正确解析 dishList 数组结构
+- 家属端订单详情重构为单卡片布局（参考员工端）
+- 家属端状态标签统一为 green/orange/grey 三色
+- 员工端 `20260727-BUG` 分支（基于 uat，6 文件更新）
+- 员工端退出登录优化：保留 current_org/org_list 缓存，只清 token/user_info
+- 员工端订单列表空状态：无数据显示 01.png，网络异常显示 02.png（orders/all-orders/order-search）
+- 员工端切换 Tab 空状态修复：刷新前先清空列表数据
+
+## 2026-07-24 新增
+- 项目同步日：两端切换到 uat 分支并拉取最新代码
+- 员工端 fast-forward 成功（60 文件，+3482/-1950 行），TabBar 从 3 项改为 2 项（去掉直播）
+- 家属端远端 uat 大幅重构（forced update），本地 uat reset 到 origin/uat
+- 家属端 `20260722-API` 的 39 文件修改已 stash 保存（名称：`本地修改暂存-20260724`）
+- GitHub workspace 同步完成
+
+## 2026-07-28 新增
+- 从 uat 创建 `20260728-BUG` 分支（两端）
+- MiMo Code 更新：`@mimo-ai/cli` 0.1.5 → 0.1.9，设置每天 10:00 自动更新（国内镜像源）
+- 家属端主包体积优化（88 文件，+588/-319 行）
+  - 健康相关页面/组件从主包迁移到 subpackageHealth 分包（health-manage/health-record/visit-edit/ec-canvas 等）
+  - 餐饮相关页面迁移到 subpackageDining 分包（restaurant/food-detail/food-search/order-confirm 等）
+  - app.json 分包配置更新
+  - 新增 package-size-optimization.md 文档
+- 家属端 visit-edit 页面重构
+  - 删除处方药确认弹窗（显示药品名称+用量卡片，深灰按钮）
+  - 删除就诊记录确认弹窗（同样式，无药品信息）
+  - 处方用药列表 UI 调整
+- 家属端默认头像资源修改（default-avatar.svg → default_avatar.png）
+- 家属端接口 toast 统一使用返回的 message 字段（request.js + 28 文件）
+- 家属端健康服务 health.js 新增接口调用
+- 家属端确认订单页 UI 调整、餐品详情页微调
+- 家属端分包页面路径修复（visit-edit/health-record 等）
+- 员工端登录失败兼容业务异常信息 & 空视图大小调整（7 文件）
+- 员工端统一接口错误提示，使用接口返回的 message 字段（7 文件）
+- 员工端合并 20260728-BUG 分支到 uat
+
+## 2026-07-29 新增
+
+### 家属端（gold-stone-care-family）
+- 分支 `20260729-FEATURE` 已合并至 uat（9 文件，+39/-106 行）
+- 退出登录接口对接：调用 POST /ma/logout，成功后才清本地状态
+- 协议链接修复：域名去掉多余的 /wz 前缀
+- 头像路径修复：default-avatar.svg → default_avatar.png
+- 健康报告删除接口调用错误修复
+- 首页优化：删除睡眠评级模块，修复老人信息换行
+- 订单弹窗样式优化
+- 当前状态：等待测试反馈缺陷
+
+### 员工端（gold-stone-care-employee）
+- uat 拉取最新 2 个提交（+46/-9 行）
+- 新增公共 WebView 页面（pages/webview/webview），用于加载用户协议和隐私政策
+- 登录页协议链接拆分：viewUserAgreement / viewPrivacyPolicy，跳转 webview 加载 HTML
+- config.js 新增 legalBaseUrl 字段（开发/测试/生产环境独立配置）
+- 协议 URL：staff-service-agreement.html / staff-privacy-policy.html
+- 当前状态：员工端基本完成，待最终测试
 
 ## 待办事项
 - [ ] 启炼AI 页面细节完善
@@ -245,7 +336,59 @@
 - [ ] 金石云伴家属端 profile-edit 页面保存后更新 globalData
 - [ ] 金石云伴家属端 order-confirm 确认下单按钮尺寸调整
 - [ ] 金石云伴家属端对接剩余未完成接口
-- [ ] 金石云伴家属端 20260722-API 分支提交并合并
+- [ ] 金石云伴家属端 visit-edit/profile-edit 对接真实 API ✅（visit-edit 已完成）
+- [ ] 金石云伴家属端 20260727-DATA 分支提交并合并
+- [ ] 金石云伴员工端 20260727-BUG 分支 Bug 修复
+- [ ] 金石云伴家属端 visit-edit 删除处方药/就诊记录弹窗提交到 20260728-BUG
+
+## 2026-07-30 新增
+
+### 家属端（gold-stone-care-family）
+- 分支 `20260730-BUG`（基于 uat）：51 文件，+897/-380 行
+- 设计稿 3.10~3.23 全部覆盖（13 个设计稿）
+
+#### 一、UI 样式统一
+- 订单列表/详情：机构名称36、标签28、图标32、图片112、名称34、描述30、价格36/40、数量24
+- 评价系统：评分区60高、星星36间距16、标题左对齐34、图片112、名称34、描述30、评分30
+- star-rating 组件：去掉半星逻辑，Math.ceil 向上取整
+- 餐品标签：用菜品自身 mealModeName + tagsName，逗号转 / 分隔
+- 去评价按钮：白色卡片 + remark.svg，列表加 icon_remark.svg 图标
+- 价格排序图标：升序/降序图标交换
+
+#### 二、餐饮首页布局重构
+- 顶部 tab + 筛选栏 position: fixed 固定，只滑动餐品列表
+- 底部订单栏 position: fixed，padding-bottom: 160rpx 防遮挡
+- loading 初始状态修复，避免空状态图片闪现
+
+#### 三、空状态 & 异常处理
+- 7 个页面统一空状态 01.png / 网络异常 02.png，wx:if/wx:elif 互斥
+- 只显示图片不显示文字，宽 500rpx widthFix 自适应，偏上显示
+- loadError 标记：请求中 false，成功 false，失败 true
+
+#### 四、头像容错
+- 9 处头像 binderror 回退 /images/default_avatar.png，直接指定路径防循环
+
+#### 五、防重复保护
+- API 提交：review-popup、review-modal、profile-edit、health-record 加 throttle
+- 导航跳转：20+ 个方法加 throttle（goBack、goOrderDetail、goSearch 等）
+- 切换老人：throttle 2000ms 覆盖 1500ms 导航等待期
+- 接口文案：所有 API 回调 toast 统一 res.message || '接口请求失败'
+
+#### 六、业务逻辑修复
+- 老人管理用 counterpartStatus 判断停用，解决停用状态从未生效的问题
+- review-popup 对接真实评价 API（reviewService.submitReview）
+- all-orders/order-detail/order-search 已完成订单批量加载评价状态
+- order-detail 已完成未评价显示"去评价"按钮，已取消显示取消原因
+- restaurant 进行中订单查询扩展到 placed/accepted/delivering
+
+#### 设计稿覆盖
+- ✅ 3.10 所有订单
+- ✅ 3.11 订单评价（弹窗）
+- ✅ 3.12 餐饮服务-已有订单（浮层）
+- ✅ 3.13 订单评价-输入评价
+- ✅ 3.14 订单评价-已评价
+- ✅ 3.17 搜索订单-搜索列表
+- ✅ 3.19~3.23 订单详情（已完成/已取消/评价/查看已评价）
 
 ---
-_最后更新：2026-07-22 17:30_
+_最后更新：2026-07-30 20:06_
