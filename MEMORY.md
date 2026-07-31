@@ -396,7 +396,24 @@
 - 家属端 uat 分支：health-manage.wxml 标签补全修复（王俊刚提交）
 - MiMo Code 自动更新：10:00 cron 执行，已是最新
 - E 盘不可用，ccs_web 项目路径待确认
-- 今天无大功能开发，主要是维护和同步
+
+### 员工端 20260731-UI 分支（UI 验收缺陷修复，15 项）
+- 登录页：复选框改为 SVG 图标（icon_checkbox_default/active.svg），图标与文字垂直居中
+- 首页订单卡片：圆角 32rpx，姓名/电话 32rpx/500，地址 34rpx/500，标签 28rpx/500/圆角 8rpx/不换行省略
+- 筛选栏：Tab 箭头替换为 icon_arrow_down.svg（首页 40rpx、订单页 24rpx），展开旋转 180°
+- 所有订单页：下拉刷新改用 scroll-view refresher，触底加载改用 bindscrolltolower，返回顶部实际滚动 + scroll-with-animation
+- 空状态图片：orders/all-orders/order-search 宽度 250rpx → 450rpx
+- 返回顶部按钮统一：120rpx 尺寸、#FFF9F0 背景、48rpx 图标、28rpx 文字
+- 取消订单弹窗：位置从居中改为距顶部 20%，textarea 添加 adjust-position 防键盘遮挡
+
+### 家属端 20260731-FEATURE 分支（UI 优化 + Bug 修复，7 大项）
+- 登录页：checkbox 从 CSS 绘制改为 SVG 图标（与员工端统一）
+- 健康管理页：header 背景图透明度排查（PNG-8 调色板问题）、老人名称跳转、isFemale 改为 gender、胶囊标签遮挡修复
+- 录入信息页：就诊记录空状态、全项目空状态图片 500→450rpx、更多操作按钮对齐、标签样式调整
+- 餐饮服务：下单后 wx.reLaunch 回首页、确认页防重复提交增强、搜索页 throttle key 按餐品 ID、无评分隐藏标签
+- 个人信息编辑：删除 mock 数据改读 globalData、字段顺序调整、头像/性别/年龄改为纯展示、住址改为可编辑 textarea
+- 首页：老人标签逻辑优化（无名字显示"老人：-"）
+- 渲染层修复：14+ 页面 setData 用 wx.nextTick 延迟，解决 Expected updated data but get first rendering data
 
 ---
-_最后更新：2026-07-31 17:30_
+_最后更新：2026-07-31 20:30_
