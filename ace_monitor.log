@@ -1,0 +1,19 @@
+﻿[2026-08-11 23:00:22] [INFO] ========== ACE Monitor Started ==========
+[2026-08-11 23:00:22] [INFO] Log file: C:\Users\Administrator\.openclaw\workspace\ace_monitor.log
+[2026-08-11 23:00:22] [INFO] Check interval: 10s
+[2026-08-11 23:00:22] [INFO] Watching directory: C:\Program Files\AntiCheatExpert
+[2026-08-11 23:00:22] [INFO] Watching directory: C:\Program Files (x86)\Common Files\Tencent
+[2026-08-11 23:00:22] [INFO] Watching directory: C:\ProgramData\AntiCheatExpert
+[2026-08-11 23:00:22] [INFO] Watching directory: C:\ProgramData\Tencent
+[2026-08-11 23:00:22] [INFO] Monitoring started. Press Ctrl+C to stop.
+[2026-08-11 23:00:22] [INFO] SERVICE_INIT : AntiCheatExpert Protection = Stopped
+[2026-08-11 23:00:22] [INFO] SERVICE_INIT : AntiCheatExpert Service = Stopped
+[2026-08-11 23:00:22] [INFO] SERVICE_INIT : EasyAntiCheat_EOS = Stopped
+[2026-08-11 23:00:22] [INFO] SERVICE_INIT : vmicguestinterface = Stopped
+[2026-08-11 23:00:26] [INFO] DRIVER_INIT : ACE-ADVT = Stopped
+[2026-08-11 23:00:26] [INFO] DRIVER_INIT : ACE-BOOT = Running
+[2026-08-11 23:00:26] [INFO] DRIVER_INIT : ACE-CORE102706 = Stopped
+[2026-08-11 23:00:26] [INFO] DRIVER_INIT : ACE-CORE202706 = Stopped
+[2026-08-11 23:00:26] [INFO] DRIVER_INIT : ACE-CORE302706 = Stopped
+[2026-08-11 23:00:26] [INFO] DRIVER_INIT : ACE-GAME = Stopped
+[2026-08-11 23:00:26] [INFO] DRIVER_INIT : ACE-SSC-DRV64 = Stopped
